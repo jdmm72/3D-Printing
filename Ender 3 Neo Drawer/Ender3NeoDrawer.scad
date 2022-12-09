@@ -36,8 +36,9 @@ cutoutXSize = 7;  // X dimension of cutout on left side of toolbox
 cutoutZSize = 15; // z dimension of cutout of left side of toolbox
 
 // decoration variables
-text = "My Tules";  // Text to be reverse embossed on front of toolbox
+text = "My Tools";  // Text to be reverse embossed on front of toolbox
 horizontalAlignment = "center";
+verticalAlignment = "center";
 
 render() {
     embossText(text, horizontalAlignment){
@@ -52,7 +53,8 @@ render() {
 module embossText(text, horizontalAlignment) {
     difference() {
         children();
-        translate([width / 2, 1, height / 2]) rotate([90, 0, 0]) linear_extrude(1) text(text, halign = horizontalAlignment);
+        translate([width / 2, 1, height / 2]) rotate([90, 0, 0]) linear_extrude(1) text(text, halign =
+        horizontalAlignment, valign = verticalAlignment);
     }
 }
 
