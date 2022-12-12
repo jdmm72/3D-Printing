@@ -23,7 +23,7 @@ $fa = 1;  // $fa minimum angle = 360/$fa
 $fs = 0.1;  // $fs minimum size of fragment, set to print size/2
 
 shaftDiameter = 25; // Length of the solid shaft, in bolt terms, the grip
-shaftLength = 60; // Diameter of the solid shaft
+shaftLength = 100; // Diameter of the solid shaft
 threadDiameter = 18; // Diameter of the threaded portion
 threadLength = 30; // Length of the threaded portion
 threadPitch = 2.5; // Pitch of the threaded portion
