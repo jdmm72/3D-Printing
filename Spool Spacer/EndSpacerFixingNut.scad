@@ -22,14 +22,14 @@ use <threads.scad>;
 $fa = 1;  // $fa minimum angle = 360/$fa
 $fs = 0.1;  // $fs minimum size of fragment, set to print size/2
 
-nutDiameter = 24; // Outer diameter of nut
+nutDiameter = 30; // Outer diameter of nut
 nutThickness = 10;  // Thickness of nut
-threadDiameter = 18;  // Diameter of thread
+threadDiameter = 19.6;  // Diameter of thread
 threadPitch = 2.5;  // Pitch of thread
 
 render() {
     difference() {
         cylinder(nutThickness, d = nutDiameter, $fn = 6, center = false);
-        metric_thread(diameter = threadDiameter, pitch = threadPitch, length = nutThickness);
+        metric_thread(diameter = threadDiameter, pitch = threadPitch, length = nutThickness, internal=true, leadin=2);
     }
 }

@@ -23,18 +23,15 @@ $fa = 1;  // $fa minimum angle = 360/$fa
 $fs = 0.1;  // $fs minimum size of fragment, set to print size/2
 
 shaftDiameter = 25; // Length of the solid shaft, in bolt terms, the grip
-shaftLength = 100; // Diameter of the solid shaft
+shaftLength = 75; // Diameter of the solid shaft
 threadDiameter = 18; // Diameter of the threaded portion
-threadLength = 40; // Length of the threaded portion
+threadLength = 45; // Length of the threaded portion
 threadPitch = 2.5; // Pitch of the threaded portion
 diskDiameter = 75; // Diameter of the stopping disk
 diskThickness = 2; // Thickness of the stopping disk
-nutDiameter = 25; // Diameter of the hexagon handle
-nutThickness = 10; // Thickness of the hexagon handle
 
 render() {
     cylinder(h = diskThickness, d = diskDiameter, center = false);
     cylinder(h = shaftLength, d = shaftDiameter, center = false);
     translate([0, 0, shaftLength]) metric_thread(diameter = threadDiameter, pitch = threadPitch, length = threadLength);
-    translate([0, 0, - nutThickness]) cylinder(nutThickness, d = nutDiameter, $fn = 6, center = false);
 }
