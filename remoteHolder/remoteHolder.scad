@@ -20,9 +20,9 @@ use <../Libraries/Verifier.scad>
 $fa = 1;  // $fa minimum angle = 360/$fa
 $fs = 0.1;  // $fs minimum size of fragment, set to print size/2
 
-width = 50.08;  // width of remote
-depth = 190.08; // Length of remote
-height = 20.08; // height of remote
+width = 40;  // width of remote
+depth = 140; // Length of remote
+height = 20; // height of remote
 armDepth = 20; // Width of holding arms on holder
 skinThickness = 2.08; // Thickness of arms and baseplate
 
@@ -34,9 +34,9 @@ bottomZOffset = (height + skinThickness) / 2;
 
 verify(width, "width");
 verify(depth, "depth");
-verify(height/2, "height/2");
+verify(height / 2, "height/2");
 verify(armDepth, "armDepth");
-verify(skinThickness/2, "skinThickness/2");
+verify(skinThickness / 2, "skinThickness/2");
 verify(plateDepth, "plateDepth");
 verify(bottomXOffset, "bottomXOffset");
 verify(bottomYOffset, "bottomYOffset");
@@ -57,7 +57,7 @@ module makeBottomBox(x, y, z, thickness, xOffset, yOffset, zOffset) {
     translate([xOffset, yOffset, zOffset])
         difference() {
             cube([x + 2 * thickness, y + thickness, z + 2 * thickness], center = true);
-            translate([0, thickness, 0])
+            translate([0, thickness / 2, 0])
                 cube([x, y, z], center = true);
         }
 }
